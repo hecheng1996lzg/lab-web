@@ -47,5 +47,7 @@
         <p>&copy; Copy Rights 2017 ZJSYS All Rights Served</p>
     </article>
 </footer>
+
+@yield('script')
 </body>
 </html>

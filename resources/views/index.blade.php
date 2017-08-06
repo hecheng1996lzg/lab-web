@@ -3,6 +3,9 @@
 @section('css')
     <link href="{{ asset('assets/css/index.css') }}" rel="stylesheet">
 @stop
+@section('script')
+    <script src="{{ asset('assets/script/main.js') }}"></script>
+@stop
 @section('banner')
     <article class="banner">
         <div>

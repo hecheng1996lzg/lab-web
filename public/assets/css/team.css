@@ -20,6 +20,23 @@ header{
     background-size: cover;
 }
 
+header .topMenu{
+    height:80px;
+}
+header .topMenu section:first-child{
+    transition: none;
+}
+header .topMenu section:first-child p span{
+    display: none;
+}
+header .topMenu section:last-child .search form{
+    display: none;
+}
+header .banner{
+    margin-top: 80px;
+}
+
+
 .head-img{
     width: 192px;
     height:192px;
