@@ -26,7 +26,7 @@ Route::get('/index','IndexController@index');
 /* 教师个人主页 */
 
 /* 教师/学生/访学切换 */
-
+Route::get('/teacher', 'TeamController@teacher');
 /* 点击年份查询访学/学生个人信息 */
 
 /* 论文/专利/项目的切换 */
