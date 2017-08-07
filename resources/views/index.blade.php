@@ -230,37 +230,23 @@
             <h1><span>关于我们</span></h1>
             <section class="pWidth">
                 <div class="content">
-                    <p>浙江大学软件工程实验室（原VLIS研究中心）由丁轶群博士于2011年成立，依托浙江大学计算机理论和应用工程基础研究，扎根
-                        于工业界前沿与先进技术领域，致力在云计算平台技术基础上研究关键领域面临的超大规模信息系统问题，通过理论探索和工程
-                        实践的有机结合，寻求关键领域信息化发展的突破。
+                    <p>
+                        浙江大学智能计算与系统Incas实验室团队专注于计算机系统结构、数据挖掘、GIS等多个领域研究，涉及云计算虚拟化、高性能计算与区块链、数据挖掘、地理信息系统、物联网、移动互联、仿真等方面。
+                        从这里走出的学子规模超过60人，他们之中，有走上讲堂的教师、有走上企业的老板、走到科研机构的科学专家……
+                        在何教授带领之下，来到Incas实验室的每位学子，为共同理想，秉承浙大人实事求是之精神，刻苦学习，共筑未来美好梦想。
                     </p>
-                    <p>软件工程实验室研发团队经过多年的发展，已经具备了稳定的研发梯队，其中包括教授/副教授8人（教师团队列表），博士、硕士
-                        研究生百余人，以及本科生数十人，形成了年轻、富有活力的研发团队。 软件工程实验室从事云计算大规模信息工程研究已近十
-                        余年，承担了数十项国内外大规模信息系统的研发，在全球化大规模信息系统开发、分布式系统研发、云计算平台研发、容器技
-                        术等方面积累了丰富的科研和工程经验。
-                    </p>
-                    <p><strong>联系方式：</strong>xx老师 18866666666</p>
                 </div>
                 <div class="link-f">
                     <p><strong>友情链接：</strong></p>
                     <ul>
                         <li>
-                            <a href="#"><img src="images/flink/link%20(1).gif" alt=""></a>
+                            <a href="http://arc.zju.edu.cn/index"><img src="assets/images/flink/arc.png" alt=""></a>
                         </li>
                         <li>
-                            <a href="#"><img src="images/flink/link%20(1).jpg" alt=""></a>
+                            <a href="http://www.yunphant.com/"><img src="assets/images/flink/yunphant.svg" alt=""></a>
                         </li>
                         <li>
-                            <a href="#"><img src="images/flink/link%20(1).png" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="images/flink/link%20(2).jpg" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="images/flink/link%20(3).jpg" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="images/flink/link%20(4).jpg" alt=""></a>
+                            <a href="https://scholar.google.com/schhp?hl=zh-CN"><img src="assets/images/flink/googlescholar.png" alt=""></a>
                         </li>
                     </ul>
                 </div>
