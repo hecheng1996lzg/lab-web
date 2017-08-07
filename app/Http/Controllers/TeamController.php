@@ -11,33 +11,29 @@ use Illuminate\Http\Request;
 
 class TeamController extends Controller
 {
+
+    private $index = ['index-2','index-1','index-3'];
+
+    private $typeObject = ['App\Teacher','App\Student','App\Visitor'];
+
     //获取教师个人信息
-    public function team($type, $year = null) {
-        switch ($type)
-        {
-            case "teacher": // 获取教师信息
-                $teachers = Teacher::all()
-                    ->toJson();
-                return response()->json($teachers);
-                break;
-            case "student": // 获取学生信息
-                if ($year == null) {
-                    $curYear = date('Y');
-                    $students = Student::where('adYear', $curYear)
-                        ->get()
-                        ->toJson();
-                } else {
-                    $students = Student::where('adYear', $year)
-                        ->get()
-                        ->toJson();
-                }
-                return response()->json($students);
-                break;
-            case "visitor": // 获取访学信息
-                $visitors = Visitor::all()
-                    ->toJson();
-                return response()->json($visitors);
-                break;
+    public function team(Request $request) {
+        $type = $request->get('type');
+        $year = $request->get('year');
+
+        $response = [];
+
+        $team = new $this->typeObject[$type-1];
+        $data = $team->getHtml($year,$this->index);
+        if($data){
+            $response['status'] = 1;
+            $response['data']['year'] = $data['year'];
+            $response['data']['content'] = $data['content'];
+        }else{
+            $response['status'] = 2;
         }
+
+        return json_encode($response);
     }
+
 }

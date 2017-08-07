@@ -40,12 +40,15 @@
             <nav class="tog-tag">
                 <div>
                     <strong>教师</strong>
+                    <ul></ul>
                 </div>
                 <div class="active">
                     <strong>学生</strong>
+                    <ul></ul>
                 </div>
                 <div>
                     <strong>访学</strong>
+                    <ul></ul>
                 </div>
             </nav>
             <section>
