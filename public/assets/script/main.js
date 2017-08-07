@@ -54,43 +54,77 @@ function Page(){
 			}
 		}
 
-		/*
-		 * ajax
-		 * toggle student
+		/**
+		 * 根据类型老师、学生、访学，返回对应查询状态及 年份和内容的html
+		 * 不传年份默认返回最新一年的数据
+		 *
+		 * 研究团队 team
+		 * 参数：
+		 *      1: [必须] type
+		 *          1: 教师
+		 *          2：学生
+		 *          3：访学
+		 *      2: [可选] year
+		 * 返回：json
+		 *      1: status
+		 *      	1: 1成功
+		 *      	2: 2失败
+		 *      2: data
+		 *          year
+		 *          content
 		 */
+
 		$('.team nav>div>strong').click(function (e) {
+			var index = $(this).parent().index();
 			$(this).parent().addClass('active').siblings().removeClass('active');
 			var self = $(this);
 			$.ajax({
-				url:'php/index.php',
-				type:'post',
+				url:'team',
+				type:'get',
+				data:{
+					type: index+1,
+				},
 				dataType:'json',
-				success:function (data) {
-					data = $('<ul> <li class="active"><a href="#">2007</a></li> <li><a href="#">2008</a></li> <li><a href="#">2009</a></li> <li><a href="#">2010</a></li> <li><a href="#">2011</a></li> <li><a href="#">2012</a></li> <li><a href="#">2013</a></li> <li><a href="#">2014</a></li> <li><a href="#">2015</a></li> <li><a href="#">2016</a></li> <li><a href="#">2017</a></li> </ul>');
-					self.siblings('ul').remove();
-					self.parent().append(data);
+				success:function (response) {
+					console.log(response);
+					if(response.status === 1){
+						updateTeam(response.data);
+					}
 				}
 			})
 		})
 
-		/*
-		 * ajax
-		 * toggle year
-		 */
 		$(document).on('click','.team nav>div ul li a',function (e) {
 			e.preventDefault();
-			$(this).parent().addClass('active').siblings().removeClass('active');
 			var self = $(this);
+			var index = $('.team nav>div.active').index();
+			var year = self.html();
 			$.ajax({
-				url:'php/index.php',
-				type:'post',
+				url:'team',
+				type:'get',
+				data:{
+					type: index+1,
+					year: year,
+				},
 				dataType:'json',
-				success:function (data) {
-					data = '<li class="index-1"> <img src="images/team/team4.jpg" alt=""> <strong>姓名叉叉</strong> <span>信息1叉叉</span> <span>信息2叉叉</span> <p>简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉 </p> </li> <li class="index-2"> <img src="images/team/team5.jpg" alt=""> <strong>姓名叉叉</strong> <span>信息1叉叉</span> <span>信息2叉叉</span> <p> 简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉 </p> </li> <li class="index-3"> <img src="images/team/team6.png" alt=""> <strong>姓名叉叉</strong> <span>信息1叉叉</span> <span>信息2叉叉</span> <p> 简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉简介叉叉叉叉 </p> </li>';
-					$('.team-main').html(data);
+				success:function (response) {
+					console.log(response);
+					if(response.status === 1){
+						updateTeam(response.data);
+					}
 				}
 			})
 		})
+
+		function updateTeam(data) {
+			var contentHtml = data.content;
+			$('.team-main').html(contentHtml);
+
+			var yearHtml = data.year;
+			$('.team nav>div.active ul').html(yearHtml);
+		}
+
+
 	}
 	this.direction = function(){
 		$('.direction p').click(function () {
