@@ -44,7 +44,7 @@
 
 <footer class="gr-bg">
     <article class="pWidth">
-        <p>&copy; Copy Rights 2017 ZJSYS All Rights Served</p>
+        <p>&copy; Copy Rights 2017 ZJU-IncasLab All Rights Served</p>
     </article>
 </footer>
 
