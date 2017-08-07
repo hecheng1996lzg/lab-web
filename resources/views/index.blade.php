@@ -52,7 +52,7 @@
                 <div class="left"></div>
                 <ul class="team-main wh img-path">
                     <li class="index-1">
-                        <img src="images/team/team1.jpg" alt="">
+                        <img src="assets/images/team/team1.jpg" alt="">
                         <strong>姓名：教师一</strong>
                         <span>职务：教授</span>
                         <span>邮箱：qqemail@qq.com</span>
@@ -60,13 +60,13 @@
                         <span>个人主页：<a href="#">www.baidu.com</a></span>
                     </li>
                     <li class="index-2">
-                        <img src="images/team/team2.jpg" alt="">
+                        <img src="assets/images/team/team2.jpg" alt="">
                         <strong>姓名：学生一</strong>
                         <span>毕业状况：在校</span>
                         <span>研究方向：研究方向</span>
                     </li>
                     <li class="index-3">
-                        <img src="images/team/team3.jpg" alt="">
+                        <img src="assets/images/team/team3.jpg" alt="">
                         <strong>姓名：访学一</strong>
                         <span>单位：单位</span>
                         <span>研究方向：研究方向</span>
@@ -82,7 +82,7 @@
             <section class="pWidth">
                 <ul class="img-path gr">
                     <li>
-                        <img src="images/direction/direction1.jpg" alt="">
+                        <img src="assets/images/direction/virtualization.jpg" alt="">
                         <div>
                             <p><strong>云计算系统虚拟化技术</strong></p>
                             <p>
@@ -90,54 +90,72 @@
                                 <span>包括性能分析预测模型、在线迁移评测方法、可配置的评测工具</span>
                             </p>
                             <p>
-                                <em>虚拟计算系统动态资源调度</em>
-                                <span>包括负载均衡、负载状态的检测、负载配置与动态优化</span>
+                                <em>虚拟化性能优化</em>
+                                <span>虚拟化CPU锁优化调度、虚拟化NUMA调度优化</span>
                             </p>
                             <p>
-                                <em>开源云平台技术研究</em>
-                                <span>基于Openstack上的二次开发与性能优化。已发表SCI/EI论文20多篇</span>
+                                <em>虚拟计算系统动态资源调度</em>
+                                <span>
+                                    虚拟集群和云平台系统的资源分配、动态资源调度算法，包括初始放置、负载均衡、负载状态检测、负载配置与动态优化，亲和性调度等。
+                                    近年来，团队在该领域承担了国家973课题、国家自然科学基金、校企合作等项目多项，同时与华为公司、中兴公司等名企公司，与中科院等有紧密合作。
+                                    已发表SCI/EI论文20多篇，申请与授权专利超过15项。
+                                </span>
                             </p>
                         </div>
                     </li>
                     <li>
-                        <img src="images/direction/direction2.jpg" alt="">
+                        <img src="assets/images/direction/ml.jpg" alt="">
                         <div>
-                            <p><strong>机器人学习与数据挖掘研究</strong></p>
+                            <p><strong>机器学习与数据挖掘</strong></p>
                             <p>
                                 <em>数据挖掘算法</em>
                                 <span>包括稀有类挖掘、同位模式挖掘、社会网络分析等方面的算法</span>
                             </p>
                             <p>
-                                <em>数据挖掘应用研究</em>
-                                <span>包括犯罪数据挖掘、移动网络数据挖掘。已发表相关SCI/EI论文30多篇</span>
+                                <em>以数据挖掘为基础的大数据分析应用研究</em>
+                                <span>
+                                    包括移动网络数据挖掘、交通大数据分析、环保大数据分析等等。已在SIGIR\ICDE\SDM\PAKDD以及ESWA\KAIS\JIIS
+                                    等重要国际会议和期刊上发表相关SCI/EI论文30多篇。
+                                </span>
                             </p>
                         </div>
                     </li>
                     <li>
-                        <img src="images/direction/direction3.jpg" alt="">
+                        <img src="assets/images/direction/blockchain.jpg" alt="">
                         <div>
-                            <p><strong>地理系统开发环境及应用开发研究</strong></p>
+                            <p><strong>高性能计算和区块链技术</strong></p>
                             <p>
-                                <em>地理信息系统平台研究与开发</em>
-                                <span>目前已经完成产品化的WebGIS、嵌入式GIS等体系完整的地理信息平台，已申请专利多项</span>
+                                <em>基于高性能的区块链平台</em>
+                                <span>
+                                    利用FPGA等加速提升区块链底层关键算法，优化的异步拜占庭共识算法，团队负责的学生超算团队
+                                    曾率浙大队获世界超算竞赛最高计算性能奖并打破世界纪录
+                                </span>
                             </p>
                             <p>
-                                <em>研发地理信息相关应用系统</em>
-                                <span>已经应用的领域包括：环保、化工、市政、水利、土地、金融、农业、交通、物流、公安，导航和社会公众服务等领域</span>
+                                <em>校企合作平台</em>
+                                <span>
+                                    团队与杭州云象网络技术有限公司联合成立了云象区块链学生实训基地，开展区块链技术产学研紧密合作。
+                                    在区块链方面已发表SCI/EI论文2篇，积累专利成果超过10项，另有出版区块链专著1部。
+                                </span>
                             </p>
                         </div>
                     </li>
                     <li>
-                        <img src="images/direction/direction4.png" alt="">
+                        <img src="assets/images/direction/gis.png" alt="">
                         <div>
-                            <p><strong>物联网与移动互联网基础支持软件技术</strong></p>
+                            <p><strong>地理系统平台与应用研发</strong></p>
                             <p>
-                                <em>物联网软件基础支持平台</em>
-                                <span>包括融合实时、关系、空间等数据的广谱数据中间层、高性能多协议服务总线、大规模仿真与控制中间件等</span>
+                                <em>地理信息系统技术与平台</em>
+                                <span>
+                                    经过近20年持续开发的GNet地理信息平台已经形成了包括二三维、Web端、移动端体系完整的地理信息平台，已申请专利多项
+                                </span>
                             </p>
                             <p>
-                                <em>移动互联网终端及中心技术</em>
-                                <span>特别跨平台智能移动终端中间件、面向移动互联网的内容分发技术（CDN）等。相关系统支撑软件居国内产业界领先水平</span>
+                                <em>广泛应用的地理信息平台</em>
+                                <span>
+                                    研发的地理信息应用几乎涉及每一个GIS的主要应用领域，尤其是在智慧环保、智慧水利、智慧交通、智慧海洋、智慧旅游、
+                                    智慧水务等领域居国内领先水平。
+                                </span>
                             </p>
                         </div>
                     </li>
