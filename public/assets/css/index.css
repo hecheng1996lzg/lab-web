@@ -453,7 +453,19 @@ header.scroll-topMenu .banner{
 }
 
 .link-f>ul>li{
+    display: flex;
+    align-items: center;
+    max-width: 90px;
     margin-right:20px;
+}
+
+.link-f>ul>li>a{
+    display: block;
+}
+
+.link-f>ul>li img{
+    display: block;
+    max-width: 90px;
 }
 
 footer{
