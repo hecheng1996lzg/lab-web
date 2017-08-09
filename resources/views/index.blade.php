@@ -30,7 +30,7 @@
                 </div>
                 <div class="news-img">
                     <div>
-                        <img src="assets/images/news/new1.png" alt="">
+                        <a href="#"><img src="assets/images/news/new1.png" alt=""></a>
                     </div>
                 </div>
             </section>
@@ -73,7 +73,7 @@
                         <strong>姓名：访学一</strong>
                         <span>单位：单位</span>
                         <span>研究方向：研究方向</span>
-                        <spa                        <span>电话：0571-09101012</span>
+                        <span>电话：0571-09101012</span>
                         n>个人主页：<a href="#">www.baidu.com</a></span>
                     </li>
                 </ul>
