@@ -187,12 +187,19 @@ header.scroll-topMenu .banner{
     border:10px solid #fff;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 }
-.news-img img{
+.news-img a{
     position: absolute;
+    display: block;
     width:100%;
     height: 100%;
-    object-fit: cover;
     transition: none;
+}
+.news-img img{
+    width:100%;
+    line-height:0px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 
@@ -453,7 +460,19 @@ header.scroll-topMenu .banner{
 }
 
 .link-f>ul>li{
+    display: flex;
+    align-items: center;
+    max-width: 90px;
     margin-right:20px;
+}
+
+.link-f>ul>li>a{
+    display: block;
+}
+
+.link-f>ul>li img{
+    display: block;
+    max-width: 90px;
 }
 
 footer{
