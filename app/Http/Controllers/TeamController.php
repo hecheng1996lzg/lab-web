@@ -16,7 +16,7 @@ class TeamController extends Controller
 
     private $typeObject = ['App\Teacher','App\Student','App\Visitor'];
 
-    //获取教师个人信息
+    //获取教师/学生/访学信息
     public function team(Request $request) {
         $type = $request->get('type');
         $year = $request->get('year');

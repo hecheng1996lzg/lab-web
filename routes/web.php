@@ -27,7 +27,7 @@ Route::get('/index','IndexController@index');
 
 /* 教师/学生/访学切换 */
 Route::get('/team', 'TeamController@team');
-/* 点击年份查询访学/学生个人信息 */
+
 
 /* 论文/专利/项目的切换 */
-
+Route::get('/achivement', 'AchievementController@achivement');

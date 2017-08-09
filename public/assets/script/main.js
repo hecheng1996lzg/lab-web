@@ -31,6 +31,8 @@ function Page(){
 			oldIndex = index;
 		});
 	}
+
+	// 实验室研究团队
 	this.team = function(){
 		var len = $('.team-main li').length - 1;
 		$('.team .left').click(function (e) {
@@ -124,18 +126,63 @@ function Page(){
 			var yearHtml = data.year;
 			$('.team nav>div.active ul').html(yearHtml);
 		}
+	} // end of this.team
 
-
-	}
 	this.direction = function(){
 		$('.direction p').click(function () {
 			$(this).toggleClass('active');
 			$(this).find('span').fadeToggle();
 		})
 	}
+
+	// 实验室研究成果
 	this.achievement = function(){
+
+		/**
+		 * 根据类型：论文、项目、专利，返回对应查询内容的html
+		 *
+		 * 研究成果 achievement
+		 * 参数：
+		 *      * index: 相应的div标签出现的次序
+		 *			* 0： project(项目)
+		 *			* 1： articles(论文)
+		 *			* 2： patent(专利)
+		 * 返回：json
+		 *      * status
+		 *      	* 1： 成功
+		 *      	* 2： 失败
+		 *      * content： 相应选项卡的HTML内容
+		 *
+		 */
+		function getData(index) {
+			$.ajax({
+				url:'achivement',
+				type:'get',
+				data:{
+					index: index,
+				},
+				dataType:'json',
+				success:function (response) {
+					console.log(response);
+					if(response.status === 1){
+						updateAchievement(response.content);
+					}
+				}
+			})
+		}
+
+		// 更新研究成果（项目/论文/专利）中的列表HTML
+		function updateAchievement(data) {
+			$('.achievement-main').html(data);
+		}
+
+		// 显示默认栏目（项目）的内容
+		var index = $('.achievement nav>div.active').index();
+		getData(index);
+
 		var dataHeight = [];
 		var minHeight = 100;
+
 		function setHeight(){
 			dataHeight = [];
 			$('.achievement-main li').each(function(){
@@ -145,36 +192,20 @@ function Page(){
 				$(this).children('div').css('height',minHeight+'px');
 			});
 		}
+
 		$(document).on('click','.achievement li',function () {
 			var height = Math.max(minHeight,dataHeight[$(this).index()]);
 			$(this).children('div').css('height',height+'px');
 			$(this).addClass('active').siblings().removeClass('active').children('div').css('height',minHeight+'px');
 		});
+		
 		setHeight();
 
-		/*
-		 * ajax
-		 * toggle project
-		 */
-		$('.achievement nav>div').click(function (e) {
+		// 在项目/论文/专利间相互切换
+		$('.achievement nav>div').click(function() {
 			$(this).addClass('active').siblings().removeClass('active');
-			var type = $(this).index();
-			$.ajax({
-				url:'php/index.php',
-				type:'post',
-				dataType:'json',
-				success:function (data) {
-					if(type==0){
-						data = '<li> <div> <h2>Journal of Intelligent Information Systems</h2> <strong class="gr">2016.01.08 - 2017.01.08</strong> <strong class="gr">Status: success</strong> <div class="mini-tag"> <span><a href="#">tag01</a></span> <span><a href="#">tag02</a></span> <span><a href="#">tag03</a></span> </div> <p class="gr02">Zhenguang Liu, Hao Huang, Qinming He, Kevin Chiew, and Lianhang Ma,Rare Category Detection on O(dN) Time Complexity, The Seventeenth Pacific-Asia Conference on Knowledge Discovery and Data Mining，PAKDD 2014， April, 2014 ２、 Qingyang Hu, Qinming He, Hao Huang, Kevin Chiew, and Zhenguang Liu, Learning from Crowds under Experts’ Supervision, The Seventeenth Pacific-Asia Conference on Knowledge Discovery and Data Mining，PAKDD 2014， April, 2014 ３、 Hao Huang, Yunjun Gao, Kevin Chiew, Lei Chen, Qinming He, Towards Effective and Efficient Mining of Arbitrary Shaped Clusters，ICDE,2014 ４、 Qingyang Hu_ Kevin Chiewy Hao Huangz Qinming He,Recovering Missing Labels of Crowdsourcing Workers, SDM 2014. ５、 Huang, H., Chiew, K., Gao, Y., He, Q., Li, Q.，Rare category exploration，Expert Systems with Applications，volume 41, issue 9, year 2014, pp. 4197 – 4210 ６、 Lianhang Ma, Hao Huang, Qinming He, Kevin Chiew, Zhenguang Liu: Toward Seed-Insensitive Solutions to Local Community Detection, Journal of Intelligent Information Systems, (on line) April 2014,DOI: 10.1007/s10844-014-0315-6 ７、 Feng Qian, Kevin Chiew, Qinming He and Hao Huang, Mining Regional Co-location Patterns with kNNG. </p> </div> </li> <li> <div> <h2>Journal of Intelligent Information Systems</h2> <strong class="gr">2016.01.08 - 2017.01.08</strong> <strong class="gr">Status: success</strong> <div class="mini-tag"> <span><a href="#">tag01</a></span> <span><a href="#">tag02</a></span> <span><a href="#">tag03</a></span> </div> <p class="gr02"> Zhenguang Liu, Hao Huang, Qinming He, Kevin Chiew, and Lianhang Ma,Rare Category Detection on O(dN) Time Complexity, The Seventeenth Pacific-Asia Conference on Knowledge Discovery and Data Mining，PAKDD 2014， April, 2014 ２、 Qingyang Hu, Qinming He, Hao Huang, Kevin Chiew, and Zhenguang Liu, Learning from Crowds under Experts’ Supervision, The Seventeenth Pacific-Asia Conference on Knowledge Discovery and Data Mining，PAKDD 2014， April, 2014 ３、 Hao Huang, Yunjun Gao, Kevin Chiew, Lei Chen, Qinming He, Towards Effective and Efficient Mining of Arbitrary Shaped Clusters，ICDE,2014 ４、 Qingyang Hu_ Kevin Chiewy Hao Huangz Qinming He,Recovering Missing Labels of Crowdsourcing Workers, SDM 2014. ５、 Huang, H., Chiew, K., Gao, Y., He, Q., Li, Q.，Rare category exploration，Expert Systems with Applications，volume 41, issue 9, year 2014, pp. 4197 – 4210 ６、 Lianhang Ma, Hao Huang, Qinming He, Kevin Chiew, Zhenguang Liu: Toward Seed-Insensitive Solutions to Local Community Detection, Journal of Intelligent Information Systems, (on line) April 2014,DOI: 10.1007/s10844-014-0315-6 ７、 Feng Qian, Kevin Chiew, Qinming He and Hao Huang, Mining Regional Co-location Patterns with kNNG. </p> </div> </li> <li> <div> <h2>Journal of Intelligent Information Systems</h2> <strong class="gr">2016.01.08 - 2017.01.08</strong> <strong class="gr">Status: success</strong> <div class="mini-tag"> <span><a href="#">tag01</a></span> <span><a href="#">tag02</a></span> <span><a href="#">tag03</a></span> </div> <p class="gr02"> Zhenguang Liu, Hao Huang, Qinming He, Kevin Chiew, and Lianhang Ma,Rare Category Detection on O(dN) Time Complexity, The Seventeenth Pacific-Asia Conference on Knowledge Discovery and Data Mining，PAKDD 2014， April, 2014 ２、 Qingyang Hu, Qinming He, Hao Huang, Kevin Chiew, and Zhenguang Liu, Learning from Crowds under Experts’ Supervision, The Seventeenth Pacific-Asia Conference on Knowledge Discovery and Data Mining，PAKDD 2014， April, 2014 ３、 Hao Huang, Yunjun Gao, Kevin Chiew, Lei Chen, Qinming He, Towards Effective and Efficient Mining of Arbitrary Shaped Clusters，ICDE,2014 ４、 Qingyang Hu_ Kevin Chiewy Hao Huangz Qinming He,Recovering Missing Labels of Crowdsourcing Workers, SDM 2014. ５、 Huang, H., Chiew, K., Gao, Y., He, Q., Li, Q.，Rare category exploration，Expert Systems with Applications，volume 41, issue 9, year 2014, pp. 4197 – 4210 ６、 Lianhang Ma, Hao Huang, Qinming He, Kevin Chiew, Zhenguang Liu: Toward Seed-Insensitive Solutions to Local Community Detection, Journal of Intelligent Information Systems, (on line) April 2014,DOI: 10.1007/s10844-014-0315-6 ７、 Feng Qian, Kevin Chiew, Qinming He and Hao Huang, Mining Regional Co-location Patterns with kNNG. </p> </div> </li>'
-					}else if(type==1){
-						data = '<li> <div> <h2>Expert Systems with Applications</h2> <strong class="gr">Status: success</strong> </div> </li> <li> <div> <h2>Expert Systems with Applications</h2> <strong class="gr">Status: success</strong> </div> </li>';
-					}else if(type==2){
-						data = '<li> <div> <h2>Patents Patents Smart Iteration-Termination Criterion Based Live Virtual Machine Migration</h2> <strong class="gr">中国, 2015103106407.</strong> </div> </li> <li> <div> <h2>Patents Patents Smart Iteration-Termination Criterion Based Live Virtual Machine Migration</h2> <strong class="gr">中国, 2015103106407.</strong> </div> </li>';
-					}
-					$('.achievement-main').html(data);
-					setHeight();
-				}
-			})
+			var index = $(this).index();
+			getData(index);
 		})
 	}
 }

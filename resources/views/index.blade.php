@@ -196,10 +196,14 @@
                         </div>
                     </li>
                     <li>
-                        <div>
-                            <h2>Expert Systems with Applications</h2>
-                            <strong class="gr">Status: success</strong>
-                        </div>
+                    <div>
+                        <h2>Expert Systems with Applications</h2>
+                        <strong class="gr">2016.01.08 - 2017.01.08</strong>
+                        <strong class="gr">Status: success</strong>
+                        <p class="gr02">
+                            adadadsad
+                        </p>
+                    </div>
                     </li>
                     <li>
                         <div>
