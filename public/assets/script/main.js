@@ -89,7 +89,6 @@ function Page(){
 				},
 				dataType:'json',
 				success:function (response) {
-					console.log(response);
 					if(response.status === 1){
 						updateTeam(response.data);
 					}
@@ -111,7 +110,6 @@ function Page(){
 				},
 				dataType:'json',
 				success:function (response) {
-					console.log(response);
 					if(response.status === 1){
 						updateTeam(response.data);
 					}
@@ -163,7 +161,6 @@ function Page(){
 				},
 				dataType:'json',
 				success:function (response) {
-					console.log(response);
 					if(response.status === 1){
 						updateAchievement(response.content);
 					}
