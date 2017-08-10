@@ -17,13 +17,13 @@
 链接文字 | `a`
 图片不换行，靠左边 | `class=img-left`
 图片不换行，靠右边 | `class=img-right`
-小号图片150*150   | `class=s`
+小号图片150\*150   | `class=s`
 小号图片宽150   | `class=w-s`
-中号图片400*400  | `class=m`
+中号图片400\*400  | `class=m`
 中号图片宽400    |  `class=w-m`
-大号图片700*700 |    `class=l`
+大号图片700\*700 |    `class=l`
 大号图片宽700     |    `class=w-l`
-特大图片1000*1000  | `class=xl`
+特大图片1000\*1000  | `class=xl`
 特大图片宽10000   |  `class=w-xl`
 占满一行   | `class=xxl`
 段落下边距 | `class=p-m`
