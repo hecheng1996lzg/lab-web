@@ -5,6 +5,28 @@
 @stop
 @section('script')
     <script src="{{ asset('assets/script/main.js') }}"></script>
+    <script>
+        $(function () {
+            $('.topMenu nav a').click(function (e) {
+                e.preventDefault();
+                var href = $(this).attr('href');
+                $(this).parent().addClass('active').siblings().removeClass('active');
+                menuScroll(href);
+            })
+            function menuScroll(href){
+                var active = href.match(/menuActive=(\w+)/);
+                if(!active)return false;
+                active = active[1];
+
+                $('html, body').animate({
+                    scrollTop: $("#"+active).offset().top
+                }, 1000);
+
+            }
+
+            menuScroll(window.location.href);
+        })
+    </script>
 @stop
 @section('banner')
     <article class="banner">
@@ -233,7 +255,7 @@
                 <div class="more active"><span>More...</span></div>
             </section>
         </article>
-        <article class="contact">
+        <article class="contact" id="contact">
             <h1><span>关于我们</span></h1>
             <section class="pWidth">
                 <div class="content">
