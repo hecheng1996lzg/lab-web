@@ -32,29 +32,36 @@
 
 ### 数据库表结构
 ![新闻表结构](newsDB.png)
+
 表项有新闻html的存储路径（`public\webPage\news\新闻.html`），新闻创建日期，新闻在首页显示的标题。
 
 ## 研究团队
 ### 老师
 ![老师信息](teacherDB.png)
+
 各个字段代表的是老师的名字、职称、研究方向、电话号码、email、老师的照片的存储路径（`public\assets\images\team\teacher\xx.jpg`或者直接存入照片文件`xx.jpg`）
 ### 学生
 ![学生信息](studentDB.png)
+
 各个字段代表的是学生的名字、入学年份、status（在校学生写研究方向，毕业学生写毕业去向）、学生的照片的存储路径（`public\assets\images\team\student\xx.jpg`或者直接存入照片文件`xx.jpg`）、学业状态（在校【1】，毕业【2】）
 ### 访问学者
 ![访问学者信息](visitorDB.png)
+
 各个字段代表的是访问学者的名字、照片的存储路径（`public\assets\images\team\visitor\xx.jpg`或者直接存入照片文件`xx.jpg`）、联系方式、研究领域
 
 ## 科研成果
 ### 项目
 ![科研项目信息](projectDB.png)
+
 项目名称、项目起始时间、项目预计结束时间、项目描述信息、项目研究状态
 ### 论文
 ![论文信息](articleDB.png)
+
 论文名称、作者信息、论文的会议/期刊信息、论文发表的年份
 
 最终的显示按照最近的年份往前显示
 
 ### 专利
 ![专利信息](patentDB.png)
+
 专利名称、专利作者、专利的状态
