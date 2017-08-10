@@ -8,6 +8,7 @@
     <script src="{{ asset('assets/script/jquery-3.1.1.js') }}"></script>
 </head>
 <body>
+<div></div>
 <header>
     <article class="pWidth-bg topMenu gr-bg">
         <section>
@@ -27,12 +28,11 @@
             <nav>
                 <ul class="wh">
                     <li class="active"><a href="#">首页</a></li>
-                    <li><a href="#news">最新动态</a></li>
-                    <li><a href="#team">研究团队</a></li>
-                    <li><a href="#direction">研究方向</a></li>
-                    <li><a href="#achievement">科研成果</a></li>
-                    <li><a href="#">关于我们</a></li>
-                    <li><a href="#">联系我们</a></li>
+                    <li><a href="{{ asset('index') }}#news">最新动态</a></li>
+                    <li><a href="{{ asset('index') }}#team">研究团队</a></li>
+                    <li><a href="{{ asset('index') }}#direction">研究方向</a></li>
+                    <li><a href="{{ asset('index') }}#achievement">科研成果</a></li>
+                    <li><a href="{{ asset('index') }}#contact">关于我们</a></li>
                 </ul>
             </nav>
         </section>

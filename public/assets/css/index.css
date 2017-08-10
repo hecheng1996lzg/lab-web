@@ -140,9 +140,10 @@ header.scroll-topMenu .banner{
     margin-top: 80px;
 }
 
-.news{
-    margin: 50px auto;
+main>article{
+    padding: 50px 0px;
 }
+
 .news section{
     display: flex;
     font-size: 18px;
@@ -208,7 +209,7 @@ header.scroll-topMenu .banner{
     flex-direction: column;
     height:900px;
     padding:50px calc(50% - 720px);
-    margin: 100px auto 50px;
+    margin: 100px auto 0px;
     background: url("../images/bg1.png") no-repeat fixed center;
 }
 
