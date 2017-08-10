@@ -1,51 +1,60 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# 实验室网站使用
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+实验室网站页面分为首页，最新动态，研究团队，研究方向，科研成果，关于我们几个板块。
 
-## About Laravel
+其中首页介绍实验室的名称是一副大的logo图，研究方向的信息以及关于我们的板块信息基本不会变动，如果需要修改，直接在`index.blade.php`页面中修改。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+## 最新动态
+该版块展示的是实验室新闻信息。如果需要添加新闻，在`webPage\news`目录下建立相应的`html`文件。该html文件会被预先设计好的样式渲染，因此仅仅需要记住以下的标签样式，便可以像编辑markdown文件一样编辑新闻：
+表示   |  样式/标签
+------ | -------- |
+文章标题 | `<div class="title"><p>文章标题</p><span>作者信息</span></div>`
+一级标题 | `<h2>标题名称</h2>`
+二级标题 | `h3`
+三级标题 | `h4`
+重要强调 | `strong`
+强调文字 | `em`
+链接文字 | `a`
+图片不换行，靠左边 | `class=img-left`
+图片不换行，靠右边 | `class=img-right`
+小号图片150*150   | `class=s`
+小号图片宽150   | `class=w-s`
+中号图片400*400  | `class=m`
+中号图片宽400    |  `class=w-m`
+大号图片700*700 |    `class=l`
+大号图片宽700     |    `class=w-l`
+特大图片1000*1000  | `class=xl`
+特大图片宽10000   |  `class=w-xl`
+占满一行   | `class=xxl`
+段落下边距 | `class=p-m`
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+模板会自动将大标题显示在左侧链接列表 。
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+### 数据库表结构
+![新闻表结构](newsDB.png)
+表项有新闻html的存储路径（`public\webPage\news\新闻.html`），新闻创建日期，新闻在首页显示的标题。
 
-## Learning Laravel
+## 研究团队
+### 老师
+![老师信息](teacherDB.png)
+各个字段代表的是老师的名字、职称、研究方向、电话号码、email、老师的照片的存储路径（`public\assets\images\team\teacher\xx.jpg`或者直接存入照片文件`xx.jpg`）
+### 学生
+![学生信息](studentDB.png)
+各个字段代表的是学生的名字、入学年份、status（在校学生写研究方向，毕业学生写毕业去向）、学生的照片的存储路径（`public\assets\images\team\student\xx.jpg`或者直接存入照片文件`xx.jpg`）、学业状态（在校【1】，毕业【2】）
+### 访问学者
+![访问学者信息](visitorDB.png)
+各个字段代表的是访问学者的名字、照片的存储路径（`public\assets\images\team\visitor\xx.jpg`或者直接存入照片文件`xx.jpg`）、联系方式、研究领域
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+## 科研成果
+### 项目
+![科研项目信息](projectDB.png)
+项目名称、项目起始时间、项目预计结束时间、项目描述信息、项目研究状态
+### 论文
+![论文信息](articleDB.png)
+论文名称、作者信息、论文的会议/期刊信息、论文发表的年份
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+最终的显示按照最近的年份往前显示
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
-
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+### 专利
+![专利信息](patentDB.png)
+专利名称、专利作者、专利的状态
