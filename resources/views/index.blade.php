@@ -255,6 +255,12 @@
                         <li>
                             <a href="https://scholar.google.com/schhp?hl=zh-CN"><img src="assets/images/flink/googlescholar.png" alt=""></a>
                         </li>
+                        <li>
+                            <a href="http://www.ccf.org.cn/"><img src="assets/images/flink/ccf.png"></a>
+                        </li>
+                        <li>
+                            <a href="http://dblp.uni-trier.de/"><img src="assets/images/flink/dblp.png"></a>
+                        </li>
                     </ul>
                 </div>
             </section>
