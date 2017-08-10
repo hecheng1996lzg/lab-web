@@ -22,7 +22,6 @@
 @stop
 
 @section('css')
-    <link  href="{{ asset('assets/font/demo.css') }}" rel="stylesheet" />
     <link  href="{{ asset('assets/font/iconfont.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/index.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/team.css') }}" rel="stylesheet">

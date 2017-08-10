@@ -8,7 +8,8 @@
     <script src="{{ asset('assets/script/jquery-3.1.1.js') }}"></script>
 </head>
 <body>
-<header>
+<div></div>
+<header id="index">
     <article class="pWidth-bg topMenu gr-bg">
         <section>
             <img src="{{ asset('assets/images/logo2.png') }}" alt="">
@@ -26,13 +27,12 @@
             </div>
             <nav>
                 <ul class="wh">
-                    <li class="active"><a href="#">首页</a></li>
-                    <li><a href="#news">最新动态</a></li>
-                    <li><a href="#team">研究团队</a></li>
-                    <li><a href="#direction">研究方向</a></li>
-                    <li><a href="#achievement">科研成果</a></li>
-                    <li><a href="#">关于我们</a></li>
-                    <li><a href="#">联系我们</a></li>
+                    <li class="{{ $menuActive=='index'? 'active':'' }}"><a href="{{ asset('index') }}?menuActive=index">首页</a></li>
+                    <li class="{{ $menuActive=='news'? 'active':'' }}"><a href="{{ asset('index') }}?menuActive=news">最新动态</a></li>
+                    <li class="{{ $menuActive=='team'? 'active':'' }}"><a href="{{ asset('index') }}?menuActive=team">研究团队</a></li>
+                    <li class="{{ $menuActive=='direction'? 'active':'' }}"><a href="{{ asset('index') }}?menuActive=direction">研究方向</a></li>
+                    <li class="{{ $menuActive=='achievement'? 'active':'' }}"><a href="{{ asset('index') }}?menuActive=achievement">科研成果</a></li>
+                    <li class="{{ $menuActive=='contact'? 'active':'' }}"><a href="{{ asset('index') }}?menuActive=contact">关于我们</a></li>
                 </ul>
             </nav>
         </section>
