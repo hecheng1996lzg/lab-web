@@ -10,7 +10,7 @@ class Project extends Model
                                 <div>
                                 <h2>{{ project_name }}</h2>
                                 <strong class="gr">{{ startTime }} - {{ endTime }}</strong>
-                                <strong class="gr">Status: {{ status }}</strong>
+                                <strong class="gr status-{{ status }}">Status: {{ statusStr }}</strong>
                                 <p class="gr02">
                                 {{ project_description }}
                                 </p>
@@ -21,12 +21,13 @@ class Project extends Model
         $html = '';
 
         foreach ($contents as $key=>$content){
-            $status = $content->status == 1 ? '已完成': '正在进行';
+            $statusStr = $content->status == 1 ? '已完成': '正在进行';
             $row = $this->contentLayout;
             $row = str_replace("{{ project_name }}", $content->name, $row);
             $row = str_replace("{{ startTime }}", $content->startTime, $row);
             $row = str_replace("{{ endTime }}", $content->endTime, $row);
-            $row = str_replace("{{ status }}", $status, $row);
+            $row = str_replace("{{ status }}", $content->status, $row);
+            $row = str_replace("{{ statusStr }}", $statusStr, $row);
             $row = str_replace("{{ project_description }}", $content->description, $row);
             $html .= $row;
             }

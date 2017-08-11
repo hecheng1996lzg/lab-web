@@ -9,8 +9,8 @@ class Patent extends Model
     private $contentLayout = '<li>
                                 <div>
                                     <h2>{{patent_name}}</h2>
-                                    <strong class="gr">Status: {{status}}</strong>
                                     <strong class="gr">{{author}}</strong>
+                                    <strong class="gr status-{{status}}">Status: {{statusStr}}</strong>
                                 </div>
                               </li>';
 
@@ -19,8 +19,10 @@ class Patent extends Model
         $html = '';
         foreach ($contents as $key=>$content){
             $row = $this->contentLayout;
+            $status = $content->status=='授权'? 1:2;
             $row = str_replace("{{patent_name}}", $content->name, $row);
-            $row = str_replace("{{status}}", $content->status, $row);
+            $row = str_replace("{{status}}", $status, $row);
+            $row = str_replace("{{statusStr}}", $content->status, $row);
             $row = str_replace("{{author}}", $content->author, $row);
             $html .= $row;
         }

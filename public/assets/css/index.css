@@ -517,3 +517,11 @@ footer{
     margin-top:140px;
     font-size: 14px;
 }
+
+/* 状态样式 */
+.achievement strong.status-1{
+    color: #4f75d8;
+}
+.achievement strong.status-2{
+    opacity:.6;
+}
