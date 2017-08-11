@@ -12,8 +12,6 @@ use Illuminate\Http\Request;
 class TeamController extends Controller
 {
 
-    private $index = ['index-2','index-1','index-3'];
-
     private $typeObject = ['App\Teacher','App\Student','App\Visitor'];
 
     //获取教师/学生/访学信息
@@ -24,7 +22,7 @@ class TeamController extends Controller
         $response = [];
 
         $team = new $this->typeObject[$type-1];
-        $data = $team->getHtml($year,$this->index);
+        $data = $team->getHtml($year);
         if($data){
             $response['status'] = 1;
             $response['data']['year'] = $data['year'];

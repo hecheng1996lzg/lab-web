@@ -3,13 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\News;
+use App\Teacher;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function index(){
         $news = News::paginate(11);
-        return view('index',['news'=>$news]);
+
+        $teacher = new Teacher();
+        $teams = $teacher->getHtml();
+        
+        return view('index',['news'=>$news,'teams'=>$teams]);
     }
 
     public function test($id){

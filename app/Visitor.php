@@ -17,8 +17,9 @@ class Visitor extends Model
                             <span>联系方式：{{contact}}</span>
                             </li>';
 
-    public function getHtml($year,$indexArr){
-        $this->indexArr = $indexArr;
+    public function getHtml($year){
+        global $params;
+        $this->indexArr = $params['index'];
         $year = $year? $year:date('Y');
 
         $contents = $this->all();
