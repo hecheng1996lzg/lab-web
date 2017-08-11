@@ -3,11 +3,8 @@
 @section('content')
     <main>
         <article class="content pWidth">
-            <aside>
+            <aside class="windowFixed">
                 <ul>
-                    <li><a href="#">段落一</a></li>
-                    <li><a href="#">新闻段落二</a></li>
-                    <li><a href="#">测试段落三</a></li>
                 </ul>
             </aside>
             <section class="content-main">
@@ -26,4 +23,22 @@
     <link href="{{ asset('assets/css/index.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/team.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/new.css') }}" rel="stylesheet">
+@stop
+
+@section('script')
+    <script>
+        $(function () {
+            var titles = $('h2');
+            titles.each(function () {
+                $('.windowFixed ul').append('<li><a href="#">'+$(this).html()+'</a></li>');
+            })
+            $('.windowFixed li').click(function () {
+                var scrollTop = $(titles[$(this).index()]);
+                scrollTop = scrollTop.offset().top - 100;
+                $('html, body').animate({
+                    scrollTop: scrollTop
+                }, 100);
+            })
+        })
+    </script>
 @stop
