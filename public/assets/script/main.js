@@ -34,7 +34,7 @@ function Page(){
 
 	// 实验室研究团队
 	this.team = function(){
-		var len = $('.team-main li').length - 1;
+		var len;
 		$('.team .left').click(function (e) {
 			start(-1);
 		})
@@ -42,19 +42,26 @@ function Page(){
 			start(1);
 		})
 		$('body').on('click','.team-main li',function(){
-			$(this).hasClass('index-1')&&start(-1);
-			$(this).hasClass('index-3')&&start(1);
+			$(this).hasClass('index-1')&&start(-1,this);
+			$(this).hasClass('index-3')&&start(1,this);
 		})
-		function start(dir){
-			for(var i=1;i<4;i++){
-				var dom = $('.team-main .index-'+i);
-				var domIndex = dom.index();
-				var index = domIndex+dir;
-				if(index<0)index = len;
-				if(index>len)index = 0;
-				dom.removeClass('index-'+i);
-				$('.team-main li:eq('+index+')').addClass('index-'+i);
-			}
+		function start(dir,self){
+            /* 只有俩人时切换方式 */
+            if($('.team-main').children('li').length==2){
+                var sbClass = dir==-1? 'index-3':'index-1';
+                $('.team-main .index-2').attr('class',sbClass);
+                $(self).attr('class','index-2');
+                return false;
+            }
+            for(var i=1;i<4;i++){
+                var dom = $('.team-main .index-'+i);
+                var domIndex = dom.index();
+                var index = domIndex+dir;
+                if(index<0)index = len;
+                if(index>len)index = 0;
+                dom.removeClass('index-'+i);
+                $('.team-main li:eq('+index+')').addClass('index-'+i);
+            }
 		}
 
 		/**
@@ -123,7 +130,29 @@ function Page(){
 
 			var yearHtml = data.year;
 			$('.team nav>div.active ul').html(yearHtml);
-		}
+
+            toggleShow();
+            len = $('.team-main li').length - 1;
+        }
+
+		function toggleShow() {
+            /* 针对人数显示隐藏箭头 */
+            var list = $('.team-main').children('li');
+            var num = list.length;
+            switch (num){
+				case 1:
+					list.first().removeClass('index-1').addClass('index-2');
+                    $('.left,.right').hide();
+                    break;
+				case 2:
+                    $('.left,.right').hide();
+                    break;
+				case 3:
+                    $('.left,.right').show();
+                    break;
+            }
+        }
+        toggleShow();
 	} // end of this.team
 
 	this.direction = function(){
@@ -168,10 +197,18 @@ function Page(){
 			})
 		}
 
-		// 更新研究成果（项目/论文/专利）中的列表HTML
+        // 在项目/论文/专利间相互切换
+        $('.achievement nav>div').click(function() {
+            $(this).addClass('active').siblings().removeClass('active');
+            var index = $(this).index();
+            getData(index);
+        })
+
+        // 更新研究成果（项目/论文/专利）中的列表HTML
 		function updateAchievement(data) {
 			$('.achievement-main').html(data);
-		}
+            setHeight();
+        }
 
 		// 显示默认栏目（项目）的内容
 		var index = $('.achievement nav>div.active').index();
@@ -195,15 +232,7 @@ function Page(){
 			$(this).children('div').css('height',height+'px');
 			$(this).addClass('active').siblings().removeClass('active').children('div').css('height',minHeight+'px');
 		});
-		
-		setHeight();
 
-		// 在项目/论文/专利间相互切换
-		$('.achievement nav>div').click(function() {
-			$(this).addClass('active').siblings().removeClass('active');
-			var index = $(this).index();
-			getData(index);
-		})
 	}
 }
 

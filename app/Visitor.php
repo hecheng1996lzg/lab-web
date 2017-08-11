@@ -18,8 +18,6 @@ class Visitor extends Model
                             </li>';
 
     public function getHtml($year){
-        global $params;
-        $this->indexArr = $params['index'];
         $year = $year? $year:date('Y');
 
         $contents = $this->all();
@@ -32,9 +30,8 @@ class Visitor extends Model
     private function getContentHtml($contents){
         $html = '';
         foreach ($contents as $key=>$content){
-            $indexId = $key<3? $this->indexArr[$key]:'';
             $row = $this->contentLayout;
-            $row = str_replace('{{index}}',$indexId,$row);
+            $row = str_replace('{{index}}','index-'.($key+1),$row);
             $row = str_replace('{{photo}}',$content->photo,$row);
             $row = str_replace('{{name}}',$content->name,$row);
             $row = str_replace('{{research}}',$content->research,$row);

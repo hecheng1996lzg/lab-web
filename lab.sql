@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-08-09 17:16:11
--- 服务器版本： 10.1.13-MariaDB
--- PHP Version: 5.6.23
+-- Generation Time: 2017-08-11 07:43:27
+-- 服务器版本： 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -74,7 +74,21 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `news_path`, `date`, `title`) VALUES
-(1, 'webPage\\news\\new1.html', '2017-08-05 00:00:00', '测试模板');
+(1, 'webPage\\news\\new1.html', '2017-08-05 00:00:00', '测试模板'),
+(2, 'webPage\\news\\new1.html', '2017-08-05 00:00:00', '测试模板233'),
+(3, 'webPage\\news\\new1.html', '2017-08-05 00:00:00', '测试模板233233'),
+(4, 'webPage\\news\\new1.html', '2017-08-05 00:00:00', '测试模板233233233'),
+(5, 'webPage\\news\\new1.html', '2017-08-05 00:00:00', '测试模板233233233233'),
+(6, 'webPage\\news\\new1.html', '2017-08-05 00:00:00', '测试模板233233233233233'),
+(7, 'webPage\\news\\new1.html', '2017-08-05 00:00:00', '测试模板233233233233233233'),
+(8, 'webPage\\news\\new1.html', '2017-08-05 00:00:00', '测试模板233233233233233233233'),
+(9, 'webPage\\news\\new1.html', '2017-08-05 00:00:00', '测试模板233233233233233233233233'),
+(10, 'webPage\\news\\new1.html', '2017-08-05 00:00:00', '测试模板233233233233233233233233233'),
+(11, 'webPage\\news\\new1.html', '2017-08-05 00:00:00', '测试模板233233233233233233233233233233'),
+(12, 'webPage\\news\\new1.html', '2017-08-05 00:00:00', '测试模板233233233233233233233233233233233'),
+(13, 'webPage\\news\\new1.html', '2017-08-05 00:00:00', '测试模板233233233233233233233233233233233233'),
+(14, 'webPage\\news\\new1.html', '2017-08-05 00:00:00', '测试模板233233233233233233233233233233233233233'),
+(15, 'webPage\\news\\new1.html', '2017-08-05 00:00:00', '测试模板233233233233233233233233233233233233233233');
 
 -- --------------------------------------------------------
 
@@ -128,7 +142,8 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`id`, `name`, `startTime`, `endTime`, `description`, `status`) VALUES
-(1, 'JUNO 虚拟计算IO性能和调度策略开发', '2014-04-01', '2017-07-01', '针对运行 JUNO 计算任务的虚拟机（简称JUNO虚拟机），提出合理的性能测试方案，编写测试工具并给出分析报告和虚拟化应用建议；采集JUNO虚拟机的性能数据，对虚拟机 vCPU 性能和IO性能进行优化；根据物理机规格给出虚拟机容量规划建议； 实现基于Openstack 的虚拟机调度决策系统，提供虚拟机的初始放置，负载均衡，热点消除，冷点整合四个功能点的调度决策。', 1);
+(1, 'JUNO 虚拟计算IO性能和调度策略开发', '2014-04-01', '2017-07-01', '针对运行 JUNO 计算任务的虚拟机（简称JUNO虚拟机），提出合理的性能测试方案，编写测试工具并给出分析报告和虚拟化应用建议；采集JUNO虚拟机的性能数据，对虚拟机 vCPU 性能和IO性能进行优化；根据物理机规格给出虚拟机容量规划建议； 实现基于Openstack 的虚拟机调度决策系统，提供虚拟机的初始放置，负载均衡，热点消除，冷点整合四个功能点的调度决策。', 1),
+(2, 'JUNO2 虚拟计算IO性能和调度策略开发', '2014-04-01', '2017-07-01', '针对运行 JUNO 计算任务的虚拟机（简称JUNO虚拟机），提出合理的性能测试方案，编写测试工具并给出分析报告和虚拟化应用建议；采集JUNO虚拟机的性能数据，对虚拟机 vCPU 性能和IO性能进行优化；根据物理机规格给出虚拟机容量规划建议； 实现基于Openstack 的虚拟机调度决策系统，提供虚拟机的初始放置，负载均衡，热点消除，冷点整合四个功能点的调度决策。针对运行 JUNO 计算任务的虚拟机（简称JUNO虚拟机），提出合理的性能测试方案，编写测试工具并给出分析报告和虚拟化应用建议；采集JUNO虚拟机的性能数据，对虚拟机 vCPU 性能和IO性能进行优化；根据物理机规格给出虚拟机容量规划建议； 实现基于Openstack 的虚拟机调度决策系统，提供虚拟机的初始放置，负载均衡，热点消除，冷点整合四个功能点的调度决策。', 2);
 
 -- --------------------------------------------------------
 
@@ -288,7 +303,7 @@ ALTER TABLE `articles`
 -- 使用表AUTO_INCREMENT `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- 使用表AUTO_INCREMENT `patents`
 --
@@ -298,7 +313,7 @@ ALTER TABLE `patents`
 -- 使用表AUTO_INCREMENT `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- 使用表AUTO_INCREMENT `students`
 --
