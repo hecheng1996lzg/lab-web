@@ -17,7 +17,11 @@ class Menu
     {
         $menuActive = $request->input('menuActive');
         $menuActive = $menuActive? $menuActive:'';
+
+        $scrollTime = $request->input('scrollTime');
+        $scrollTime = $scrollTime? $scrollTime:1000;
         view()->share('menuActive',$menuActive);
+        view()->share('scrollTime',$scrollTime);
         return $next($request);
     }
 }

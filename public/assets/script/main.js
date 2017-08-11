@@ -17,7 +17,7 @@ function Page(){
 	}
 	this.news = function () {
 		var oldIndex = 0;
-		$('.news-list li').mouseover(function(){
+		$('.news-list>ul li').mouseover(function(){
 			var oldImg = $('.news-img a');
 			var newHref = $(this).children('a').attr('href');
 			var newImg = $('<a href="'+newHref+'"><img src="assets/images/news/'+ $(this).attr('data-newImg') +'" alt=""></a>');

@@ -49,6 +49,7 @@
                         <li data-newImg="new1.png"><a href="{{ asset('news/'.$new->id) }}">{{ date('Y-m-d',strtotime($new->date)) }} {{ $new->title }}</a></li>
                         @endforeach
                     </ul>
+                    <div class="pagination-wrapper">{{ $news->appends(['menuActive' => 'news','scrollTime' => 0])->links() }}</div>
                 </div>
                 <div class="news-img">
                     <div>
