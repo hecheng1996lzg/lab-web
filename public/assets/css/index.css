@@ -204,6 +204,7 @@ main>article{
 .news-list>.pagination-wrapper ul li.active{
     font-weight: bold;
     text-decoration: underline;
+    opacity:0.9;
 }
 
 

@@ -20,7 +20,7 @@
 
                 $('html, body').animate({
                     scrollTop: $("#"+active).offset().top
-                }, 1000);
+                }, {{ $scrollTime }});
 
             }
 
