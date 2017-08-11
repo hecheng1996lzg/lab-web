@@ -197,10 +197,18 @@ function Page(){
 			})
 		}
 
-		// 更新研究成果（项目/论文/专利）中的列表HTML
+        // 在项目/论文/专利间相互切换
+        $('.achievement nav>div').click(function() {
+            $(this).addClass('active').siblings().removeClass('active');
+            var index = $(this).index();
+            getData(index);
+        })
+
+        // 更新研究成果（项目/论文/专利）中的列表HTML
 		function updateAchievement(data) {
 			$('.achievement-main').html(data);
-		}
+            setHeight();
+        }
 
 		// 显示默认栏目（项目）的内容
 		var index = $('.achievement nav>div.active').index();
@@ -224,15 +232,7 @@ function Page(){
 			$(this).children('div').css('height',height+'px');
 			$(this).addClass('active').siblings().removeClass('active').children('div').css('height',minHeight+'px');
 		});
-		
-		setHeight();
 
-		// 在项目/论文/专利间相互切换
-		$('.achievement nav>div').click(function() {
-			$(this).addClass('active').siblings().removeClass('active');
-			var index = $(this).index();
-			getData(index);
-		})
 	}
 }
 
