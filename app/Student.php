@@ -17,8 +17,9 @@ class Student extends Model
                             <span>研究方向：{{status}}</span>
                             </li>';
 
-    public function getHtml($year,$indexArr){
-        $this->indexArr = $indexArr;
+    public function getHtml($year){
+        global $params;
+        $this->indexArr = $params['index'];
         $year = $year? $year:date('Y');
 
         $contents = $this->where('adYear', $year)->get();

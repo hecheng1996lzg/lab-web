@@ -20,7 +20,7 @@
 
                 $('html, body').animate({
                     scrollTop: $("#"+active).offset().top
-                }, 1000);
+                }, {{ $scrollTime }});
 
             }
 
@@ -49,6 +49,7 @@
                         <li data-newImg="new1.png"><a href="{{ asset('news/'.$new->id) }}">{{ date('Y-m-d',strtotime($new->date)) }} {{ $new->title }}</a></li>
                         @endforeach
                     </ul>
+                    <div class="pagination-wrapper">{{ $news->appends(['menuActive' => 'news','scrollTime' => 0])->links() }}</div>
                 </div>
                 <div class="news-img">
                     <div>
@@ -60,11 +61,11 @@
         <article id="team" class="team pWidth-bg">
             <h1 class="wh"><span>研究团队</span></h1>
             <nav class="tog-tag">
-                <div>
+                <div class="active">
                     <strong>教师</strong>
                     <ul></ul>
                 </div>
-                <div class="active">
+                <div>
                     <strong>学生</strong>
                     <ul></ul>
                 </div>
@@ -76,28 +77,7 @@
             <section>
                 <div class="left"></div>
                 <ul class="team-main wh img-path">
-                    <li class="index-1">
-                        <img src="assets/images/team/team1.jpg" alt="">
-                        <strong>姓名：教师一</strong>
-                        <span>职务：教授</span>
-                        <span>邮箱：qqemail@qq.com</span>
-                        <span>电话：0571-09101012</span>
-                        <span>个人主页：<a href="#">www.baidu.com</a></span>
-                    </li>
-                    <li class="index-2">
-                        <img src="assets/images/team/team2.jpg" alt="">
-                        <strong>姓名：学生一</strong>
-                        <span>毕业状况：在校</span>
-                        <span>研究方向：研究方向</span>
-                    </li>
-                    <li class="index-3">
-                        <img src="assets/images/team/team3.jpg" alt="">
-                        <strong>姓名：访学一</strong>
-                        <span>单位：单位</span>
-                        <span>研究方向：研究方向</span>
-                        <span>电话：0571-09101012</span>
-                        n>个人主页：<a href="#">www.baidu.com</a></span>
-                    </li>
+                    {!! $teams['content'] !!}
                 </ul>
                 <div class="right"></div>
             </section>

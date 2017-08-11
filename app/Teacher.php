@@ -19,8 +19,9 @@ class Teacher extends Model
                             <span>个人主页：<a href="#">www.baidu.com</a></span>
                             </li>';
 
-    public function getHtml($year,$indexArr){
-        $this->indexArr = $indexArr;
+    public function getHtml($year=null){
+        global $params;
+        $this->indexArr = $params['index'];
         $year = $year? $year:date('Y');
 
         $contents = $this->all();
