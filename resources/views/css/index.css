@@ -1,0 +1,527 @@
+/* page max width */
+.pWidth{
+    max-width:1440px;
+    width:90%;
+    margin:0px auto;
+}
+.pWidth-bg{
+    padding:10px calc(50% - 720px);
+}
+
+/* the header(top bar and navigation and logo) and banner effect starts here */
+header{
+    width:100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header .topMenu{
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    z-index: 100;
+    display: flex;
+    height:130px;
+}
+header .topMenu section:first-child{
+    display: flex;
+    align-items: flex-end;
+    height:inherit;
+}
+header .topMenu section:first-child img{
+    height:100%;
+    margin-right: 15px;
+    object-fit: contain;
+}
+header .topMenu section:first-child p{
+    display: flex;
+    flex-direction: column;
+    font-size:25px;
+    margin-bottom: 20px;
+}
+
+header .topMenu section:last-child{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+header .topMenu section:last-child .search{
+    height: 40px;
+    margin-top: 10px;
+    background: #4f75d8;
+}
+header .topMenu section:last-child .search form{
+    display: flex;
+    height:inherit;
+    align-items: center;
+}
+header .topMenu section:last-child .search input{
+    height:inherit;
+    font-size: 14px;
+    text-indent: 10px;
+    min-width:250px;
+}
+header .topMenu section:last-child .search button{
+    display: block;
+    width: 50px;
+    height:inherit;
+    background: url("../images/search.png") no-repeat center;
+    background-size: 25px 25px;
+}
+header nav ul{
+    display: flex;
+}
+header nav ul li{
+    position: relative;
+    font-size: 22px;
+    margin: 0px 15px;
+    padding-bottom:25px;
+}
+header nav ul li:last-child{
+    margin-right: 0px;
+}
+header nav ul li a{
+    padding:inherit;
+}
+header nav ul li::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height:5px;
+    bottom: -10px;
+    left:0px;
+    background: #4f75d8;
+    transform: rotateY(90deg);
+    transition: all 0.3s ease;
+}
+header nav ul li.active::after{
+    transform: rotateY(0deg);
+}
+header nav ul li:hover::after{
+    transform: rotateY(0deg);
+}
+
+header .banner{
+    margin-top: 150px;
+    flex:1;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background: url("../images/banner.png") no-repeat center;
+    background-size: cover;
+}
+header .banner div{
+    text-align: center;
+    font-size: 60px;
+    color: #e2e2e2;
+    line-height: 130px;
+    text-shadow:2.1px 2.14px 7px rgba(0,0,0,.35);
+}
+header .banner div p:nth-of-type(2){
+    font-size: 80px;
+    color: #ffffff;
+}
+
+header.scroll-topMenu .topMenu{
+    height:80px;
+}
+header .topMenu section:first-child{
+    transition: none;
+}
+header.scroll-topMenu .topMenu section:first-child p span{
+    display: none;
+}
+header.scroll-topMenu .topMenu section:last-child .search form{
+    display: none;
+}
+header.scroll-topMenu .banner{
+    margin-top: 80px;
+}
+
+main>article{
+    padding: 50px 0px;
+}
+
+.news section{
+    display: flex;
+    font-size: 18px;
+    min-height: 500px;
+}
+.news-list{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex: 1;
+    max-width: 500px;
+}
+.news-list>ul{
+    width: 100%;
+}
+.news-list>ul li{
+    display: flex;
+    align-items: center;
+    line-height: 40px;
+}
+.news-list>ul li a{
+    flex:1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.news-list>ul li:before{
+    content: '';
+    width:0px;
+    height:0px;
+    border:6px solid #fff;
+    border-left:6px solid #4f75d8;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+.news-list>ul li:hover:before{
+    transform: translateX(0px) rotateX(180deg);
+}
+
+.news-list>.pagination-wrapper ul{
+    display: flex;
+}
+.news-list>.pagination-wrapper ul li{
+    padding: 5px 12px;
+    background: #666;
+    color: #fff;
+}
+.news-list>.pagination-wrapper ul li:hover{
+    opacity:0.9;
+}
+.news-list>.pagination-wrapper ul li:first-child{
+    background: #4f75d8;
+}
+.news-list>.pagination-wrapper ul li:last-child{
+    background: #4f75d8;
+}
+.news-list>.pagination-wrapper ul li.active{
+    font-weight: bold;
+    text-decoration: underline;
+    opacity:0.9;
+}
+
+
+.news-img{
+    position: relative;
+    display: flex;
+    flex:1;
+}
+.news-img div{
+    position: relative;
+    max-width:100%;
+    max-height:100%;
+    width:80%;
+    margin-left: 20%;
+    border:10px solid #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+.news-img a{
+    position: absolute;
+    display: block;
+    width:100%;
+    height: 100%;
+    transition: none;
+}
+.news-img img{
+    width:100%;
+    line-height:0px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.team{
+    display: flex;
+    flex-direction: column;
+    height:900px;
+    padding:50px calc(50% - 720px);
+    margin: 100px auto 0px;
+    background: url("../images/bg1.png") no-repeat fixed center;
+}
+
+.team section{
+    flex:1;
+    display: flex;
+    align-items: center;
+}
+.team section .left{
+    width:50px;
+    height:80px;
+    cursor: pointer;
+    background: url("../images/left.png");
+    opacity:0;
+    transform: translateX(50px) scale(.3);
+}
+.team section:hover .left{
+    opacity:0.4;
+    transform: translateX(0px);
+}
+.team section .left:hover{
+    opacity:0.8;
+}
+.team section .right{
+    width:50px;
+    height:80px;
+    cursor: pointer;
+    background: url("../images/right.png");
+    opacity:0;
+    transform: translateX(-50px) scale(.3);
+}
+.team section:hover .right{
+    opacity:0.4;
+    transform: translateX(0px);
+}
+.team section .right:hover{
+    opacity:0.8;
+}
+
+.team-main{
+    flex:1;
+    align-self: stretch;
+    position: relative;
+}
+.team-main li{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:30%;
+    height:100%;
+    text-align: center;
+    opacity:0;
+}
+.team-main li img{
+    max-width:100%;
+    width:300px;
+    height:300px;
+    object-fit: cover;
+}
+.team-main li strong{
+    margin: 25px 0px;
+    font-size: 30px;
+}
+.team-main li span{
+    margin-bottom: 10px;
+}
+.team-main li p{
+    color: #999;
+}
+.team-main li.index-1{
+    opacity:0.5;
+    transform: translateX(-50%) scale(0.5);
+    left: 20%;
+}
+.team-main li.index-2{
+    opacity:1;
+    transform: translateX(-50%) scale(1);
+}
+.team-main li.index-3{
+    opacity:0.5;
+    transform: translateX(-50%) scale(0.5);
+    left: 80%;
+}
+
+.direction{
+}
+.direction section ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.direction section ul li{
+    width:50%;
+    display: flex;
+    align-items: center;
+}
+.direction section ul li img{
+    height:250px;
+    width:30%;
+    margin: 40px;
+}
+.direction section ul li div{
+    flex:1;
+}
+.direction section ul li div strong{
+    cursor: auto;
+    font-size: 22px;
+    line-height: 2em;
+}
+
+.direction section ul li div em{
+    position: relative;
+    font-style: normal;
+}
+
+.direction p em:after{
+    position: absolute;
+    right: -15px;
+    top: 0px;
+    bottom: 0px;
+    margin:auto;
+    content: '';
+    display: block;
+    width: 0px;
+    height: 0px;
+    border: 5px solid transparent;
+    border-top: 5px solid #ccc;
+}
+
+.direction p.active em:after {
+    transform: rotateX(180deg);
+}
+
+.direction section ul li div p{
+    cursor: pointer;
+    padding:5px 0px;
+}
+.direction section ul li div p span{
+    display: none;
+    transition: none;
+    color: #999999;
+}
+.direction section ul li div p span:before{
+    content: '\A';
+    white-space: pre;
+}
+
+.achievement .tog-tag{
+    color: #333;
+}
+.achievement ul li{
+    display: flex;
+    cursor: pointer;
+}
+.achievement ul .left{
+    flex:1;
+    text-align: right;
+    padding:100px 40px 0px;
+}
+.achievement ul>li>div{
+    flex:2;
+    border-left: 2px solid rgba(0,0,0,.2);
+    padding:60px 40px 60px;
+    overflow: hidden;
+}
+.achievement ul>li>div:before{
+    content: '';
+    position: absolute;
+    width: 24px;
+    height:24px;
+    border:3px solid #ccc;
+    border-radius: 50%;
+    margin-left: -56px;
+    margin-top: 12px;
+    background: #eee;
+    transition: all 0.3s ease;
+}
+.achievement ul .left figure{
+    display: inline-block;
+    max-width:100%;
+    width: 300px;
+    height:200px;
+    border:10px solid #fff;
+    overflow: hidden;
+}
+.achievement ul .left img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+.achievement strong{
+    display: block;
+    margin: 10px 0px 5px;
+    font-size: 20px;
+    opacity:0.8;
+}
+
+.achievement li.active>div{
+}
+.achievement li.active .left figure{
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+.achievement li.active .right:before{
+    border:3px solid #fff;
+    background: #4f75d8;
+}
+.achievement li.active .right h2{
+    color: #4f75d8;
+}
+.achievement li:hover .left figure{
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+.achievement li:hover>div:before{
+    border:3px solid #fff;
+    background: #4f75d8;
+}
+.achievement .more{
+    margin-top: 50px;
+    text-align: center;
+    font-weight: bold;
+    color: #ccc;
+    cursor: pointer;
+}
+.achievement .more span:hover{
+    color: #4f75d8;
+}
+
+.contact .content{
+    margin-bottom: 20px;
+}
+
+.contact .content p{
+    text-indent: 2em;
+    margin-bottom: 10px;
+}
+.contact .content p:last-child{
+    text-indent: 0em;
+}
+
+.link-f>p{
+    margin-bottom:10px;
+}
+.link-f>ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.link-f>ul>li{
+    display: flex;
+    align-items: center;
+    margin-right:20px;
+}
+
+.link-f>ul>li>a{
+    display: block;
+}
+
+.link-f>ul>li img{
+    display: block;
+    max-width: 120px;
+    max-height: 70px;
+}
+
+footer{
+    text-align: center;
+    color: #fff;
+    padding:16px 0px;
+    margin-top:140px;
+    font-size: 14px;
+}
+
+/* 状态样式 */
+.achievement strong.status-1{
+    color: #4f75d8;
+}
+.achievement strong.status-2{
+    opacity:.6;
+}

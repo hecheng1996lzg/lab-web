@@ -73,6 +73,14 @@ header .banner{
     font-weight: bold;
 }
 
+.windowFixed>ul{
+    position: fixed;
+}
+
+main>article{
+    padding:0px;
+}
+
 .content{
     margin-top:50px;
     display: flex;

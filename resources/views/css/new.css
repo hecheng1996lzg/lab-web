@@ -1,0 +1,189 @@
+/*
+
+1. 段落使用p包裹
+    1.1 段落下边距          class=p-m
+2. 图片默认前后换行，实现图文混排需要把
+    2.1 图片不换行，靠左边   class=img-left
+    2.1 图片不换行，靠右边   class=img-right
+3. 图片尺寸使用默认尺寸，带w的只限制宽。
+    3.1 小号图片150*150     class=s
+        宽150              class=w-s
+    3.2 中号图片400*400     class=m
+        宽400              class=w-m
+    3.3 大号图片700*700     class=l
+        宽700              class=w-l
+    3.4 特大图片1000*1000   class=xl
+        宽10000            class=w-xl
+    3.5 占满一行            class=xxl
+4. 标题
+    4.1 大标题，显示在左侧链接列表    h2
+    4.2 中标题                      h3
+    4.3 小标题                      h4
+5. 强调文字                         em
+6. 重要强调文字                     strong
+6. 链接文字                         a
+
+*/
+
+.content-main .title{
+    text-align: center;
+}
+
+.content-main .title p{
+    margin-bottom:10px;
+    font-weight: bold;
+    font-size: 30px;
+    text-indent: 0px;
+}
+
+.content-main .title span{
+    display: block;
+    text-align: center;
+}
+
+.content-main .bottom{
+    text-align: right;
+}
+
+.content-main{
+    flex:6;
+    margin-left:30px;
+}
+
+.content-main p{
+    font-size: 16px;
+    margin:20px 0px 30px;
+}
+
+.content-main p:after{
+    content: "020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.content-main p.p-m{
+    margin-bottom:50px;
+}
+
+
+.content-main img{
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    max-width: 100%;
+    margin:15px 0px;
+}
+
+.content-main img.s{
+    width: 150px;
+    height: 150px;
+    margin:15px;
+    padding:5px;
+    border:1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.content-main img.w-s {
+    width: 100%;
+    max-width: 150px;
+    margin:15px;
+    padding:5px;
+    border:1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.content-main img.m{
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    margin:15px;
+    padding:5px;
+    border:1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.content-main img.w-m {
+    width: 100%;
+    max-width: 400px;
+    margin:15px;
+    padding:5px;
+    border:1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.content-main img.l{
+    width: 100%;
+    max-width: 700px;
+    height: 700px;
+}
+
+.content-main img.w-l{
+    width: 100%;
+    max-width: 700px;
+}
+
+.content-main img.xl{
+    width: 100%;
+    max-width: 1000px;
+    height: 1000px;
+}
+
+.content-main img.w-xl {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.content-main img.xxl{
+    width: 100%;
+    max-width: 100%;
+}
+
+.content-main img.img-left{
+    float: left;
+    margin-top:0px;
+}
+
+.content-main img.img-right{
+    float: right;
+    margin-top:0px;
+}
+
+.content-main h2{
+    font-size: 26px;
+    margin:16px 0px;
+}
+
+.content-main h3{
+    font-size: 22px;
+    color: #3f3f3f;
+    text-indent: 2em;
+    margin:12px 0px;
+}
+
+.content-main h4{
+    font-size: 18px;
+    color: #3f3f3f;
+    text-indent: 4em;
+    margin:5px 0px;
+}
+
+.content-main em{
+    font-weight: bold;
+    font-style: normal;
+}
+
+.content-main strong{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.content-main span{
+    color: #999;
+}
+
+.content-main a{
+    color: #4f75d8;
+}
+
