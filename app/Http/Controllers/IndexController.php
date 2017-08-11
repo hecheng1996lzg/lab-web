@@ -13,7 +13,7 @@ class IndexController extends Controller
 
         $teacher = new Teacher();
         $teams = $teacher->getHtml();
-        
+
         return view('index',['news'=>$news,'teams'=>$teams]);
     }
 
