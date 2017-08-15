@@ -33,6 +33,7 @@
                 $('.windowFixed ul').append('<li><a href="#">'+$(this).html()+'</a></li>');
             })
             $('.windowFixed li').click(function () {
+                $(this).addClass('active').siblings().removeClass('active');
                 var scrollTop = $(titles[$(this).index()]);
                 scrollTop = scrollTop.offset().top - 100;
                 $('html, body').animate({
