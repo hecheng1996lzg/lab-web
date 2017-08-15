@@ -73,8 +73,25 @@ header .banner{
     font-weight: bold;
 }
 
-.windowFixed>ul{
+.windowFixed{
     position: fixed;
+    width: 200px;
+}
+
+.windowFixed>ul{
+    width: 100%;
+}
+
+.windowFixed>ul>li a{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: none;
+}
+
+.windowFixed>ul>li.active{
+    font-weight: bold;
+    color: #4f75d8;
 }
 
 main>article{
@@ -84,10 +101,6 @@ main>article{
 .content{
     margin-top:50px;
     display: flex;
-}
-
-.content>aside{
-    flex:1;
 }
 
 .content>aside>ul>li{
@@ -111,6 +124,5 @@ main>article{
 }
 
 .content>section{
-    flex:6;
-    margin-left:30px;
+    margin-left:230px;
 }
