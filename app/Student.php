@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     private $indexArr;
+    private $photo_path = "assets\\images\\team\\student\\";
 
     private $yearLayout = '<li class="{{active}}"><a href="#">{{adYear}}</a></li>';
 
@@ -23,7 +24,7 @@ class Student extends Model
         $contents = $this->where('adYear', $year)->get();
         $contentHtml = $this->getContentHtml($contents);
 
-        $years = $this->select(['adYear'])->distinct('adYear')->get();
+        $years = $this->select(['adYear'])->distinct('adYear')->orderBy('adYear', 'asc')->get();
         $yearHtml = $this->getYearHtml($years,$year);
 
         return ['content'=>$contentHtml,
@@ -37,6 +38,8 @@ class Student extends Model
             $bool = $content->bool==1? '在校':'已毕业';
             $row = $this->contentLayout;
             $row = str_replace('{{index}}','index-'.($key+1),$row);
+            if (!strstr($content->photo, $this->photo_path))
+                $content->photo = $this->photo_path . $content->photo;
             $row = str_replace('{{photo}}',$content->photo,$row);
             $row = str_replace('{{name}}',$content->name,$row);
             $row = str_replace('{{bool}}',$bool,$row);
