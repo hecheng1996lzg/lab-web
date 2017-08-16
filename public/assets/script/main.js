@@ -20,7 +20,7 @@ function Page(){
 		$('.news-list>ul li').mouseover(function(){
 			var oldImg = $('.news-img a');
 			var newHref = $(this).children('a').attr('href');
-			var newImg = $('<a href="'+newHref+'"><img src="assets/images/news/'+ $(this).attr('data-newImg') +'" alt=""></a>');
+			var newImg = $('<a href="'+newHref+'"><img src="'+ $(this).attr('data-newImg') +'" alt=""></a>');
 			var index = $(this).index();
 			if(index<oldIndex){
 				oldImg.slideUp(function(){$(this).remove()});
