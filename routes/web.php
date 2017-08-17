@@ -24,7 +24,7 @@ Route::get('/index','IndexController@index');
 //Route::get('/test/{id}','IndexController@test');
 
 /* 教师个人主页 */
-
+Route::get('/teacher/{id}','TeacherController@homepage');
 /* 教师/学生/访学切换 */
 Route::get('/team', 'TeamController@team');
 

@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-08-11 07:43:27
--- 服务器版本： 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: 2017-08-17 13:30:46
+-- 服务器版本： 10.1.13-MariaDB
+-- PHP Version: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -178,10 +178,10 @@ CREATE TABLE `students` (
 INSERT INTO `students` (`id`, `name`, `adYear`, `status`, `photo`, `bool`) VALUES
 (1, '吕颖', 2014, '虚拟化性能评测', 'assets\\images\\team\\student\\buwei.jpg', '1'),
 (2, '翁海琴', 2014, '机器学习', 'assets\\images\\team\\student\\hqw.jpg', '1'),
-(3, '张淼', 2016, '高性能计算', 'assets\\images\\team\\student\\zhangmiao.jpg', '1'),
-(4, '袁佳琪', 2017, '机器学习', 'assets\\images\\team\\student\\yjq.jpg', '2'),
-(5, '测试一位', 2017, '学习', 'assets\\images\\team\\student\\yjq.jpg', '1'),
-(6, '测试二位', 2017, '工作单位一', 'assets\\images\\team\\student\\yjq.jpg', '2');
+(4, '袁佳琪', 2017, '数据挖掘、机器学习', 'assets\\images\\team\\student\\yjq.jpg', '1'),
+(7, '王津航', 2015, '区块链安全与性能 \r\n信息安全与隐私保护 ', 'wangjh.jpeg', '1'),
+(8, '黄步添', 2012, '操作系统虚拟化、区块链', 'huangbutian.jpg', '1'),
+(9, '张淼', 2016, '云计算、高性能计算、深度学习', 'zhangmiao.jpg', '1');
 
 -- --------------------------------------------------------
 
@@ -194,17 +194,22 @@ CREATE TABLE `teachers` (
   `name` varchar(255) NOT NULL COMMENT '姓名',
   `title` varchar(255) NOT NULL COMMENT '职位',
   `research` varchar(255) NOT NULL COMMENT '研究方向',
-  `tel` varchar(255) NOT NULL COMMENT '电话',
   `email` varchar(255) NOT NULL COMMENT '邮件',
-  `photo` varchar(255) NOT NULL COMMENT '照片路径'
+  `photo` varchar(255) NOT NULL COMMENT '照片路径',
+  `profile` text NOT NULL COMMENT '个人简介',
+  `research_fields` text NOT NULL COMMENT '研究方向',
+  `prize` text COMMENT '获奖',
+  `publishment` text NOT NULL COMMENT '发表著作',
+  `teach` text COMMENT '教学'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `teachers`
 --
 
-INSERT INTO `teachers` (`id`, `name`, `title`, `research`, `tel`, `email`, `photo`) VALUES
-(1, '陈建海', '讲师', '虚拟化、高性能计算、区块链', '1111111', 'dasda@zju.edu.cn', 'assets\\images\\team\\teacher.jpg');
+INSERT INTO `teachers` (`id`, `name`, `title`, `research`, `email`, `photo`, `profile`, `research_fields`, `prize`, `publishment`, `teach`) VALUES
+(1, '陈建海', '讲师', '虚拟化、高性能计算、区块链', 'dasda@zju.edu.cn', 'assets\\images\\team\\teacher.jpg', '', '', '', '', ''),
+(2, '何钦铭', '教授，博士生导师', '数据挖掘、虚拟计算系统技术', 'hqm@zju.edu.cn', 'he.png', '浙江大学计算机科学与技术学院教授，教育部大学计算机课程教学指导委员会副主任委员、浙江省高校计算机类专业教学指导委员会主任委员。', '数据挖掘、虚拟计算系统技术', NULL, 'xxxxxxxxxxxxxxxxxxx', '主讲“程序设计基础”、“数据结构基础”、“高级数据结构与算法分析”等课程。为国家精品课程与精品资源共享课程“程序设计基础”负责人、国家十一五及十二五规划教材“C语言程序设计”负责人。');
 
 -- --------------------------------------------------------
 
@@ -318,12 +323,12 @@ ALTER TABLE `projects`
 -- 使用表AUTO_INCREMENT `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- 使用表AUTO_INCREMENT `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- 使用表AUTO_INCREMENT `titles`
 --
