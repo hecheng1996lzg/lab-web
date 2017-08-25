@@ -179,19 +179,27 @@ function Page(){
 		 *      	* 1： 成功
 		 *      	* 2： 失败
 		 *      * content： 相应选项卡的HTML内容
+		 *      * limit: 加载了几条
 		 *
 		 */
-		function getData(index) {
+		function getData(index,offset) {
 			$.ajax({
 				url:'achivement',
 				type:'get',
 				data:{
 					index: index,
+					offset: offset? offset:0,
 				},
 				dataType:'json',
 				success:function (response) {
 					if(response.status === 1){
-						updateAchievement(response.content);
+						if(offset){
+							appendAchievement(response.content);
+							offset = offset-0+response.limit;
+							$('#moreOffset').data('offset',offset);
+						}else{
+							updateAchievement(response.content);
+						}
 					}
 				}
 			})
@@ -210,10 +218,22 @@ function Page(){
             setHeight();
         }
 
+		function appendAchievement(data) {
+			$('.achievement-main').append(data);
+			setHeight();
+		}
+
 		// 显示默认栏目（项目）的内容
 		var index = $('.achievement nav>div.active').index();
 		getData(index);
 
+		// more 点击事件
+		$('#moreOffset').click(function () {
+			var offset = $(this).data('offset');
+			var index = $('.achievement .tog-tag').children('div.active').index();
+			getData(index,offset);
+		})
+		
 		var dataHeight = [];
 		var minHeight = 100;
 

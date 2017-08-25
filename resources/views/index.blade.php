@@ -232,7 +232,7 @@
                         </div>
                     </li>
                 </ul>
-                <div class="more active"><span>More...</span></div>
+                <div class="more active"><span data-offset="2" id="moreOffset">More...</span></div>
             </section>
         </article>
         <article class="contact" id="contact">

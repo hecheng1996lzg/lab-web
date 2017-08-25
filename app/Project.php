@@ -34,8 +34,8 @@ class Project extends Model
         return $html;
         }
 
-    public function getHtml(){
-        $contents = $this->orderBy('startTime', 'desc')->get();
+    public function getHtml($offset,$limit){
+        $contents = $this->offset($offset)->limit($limit)->orderBy('startTime', 'desc')->get();
         return $this->getContentHtml($contents);
     }
 }

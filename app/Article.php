@@ -28,8 +28,8 @@ class Article extends Model
         }
         return $html;
     }
-    public function getHtml(){
-        $contents = $this->orderBy('time', 'desc')->get();
+    public function getHtml($offset,$limit){
+        $contents = $this->offset($offset)->limit($limit)->orderBy('time', 'desc')->get();
         return $this->getContentHtml($contents);
     }
 }

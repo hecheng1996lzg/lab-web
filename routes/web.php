@@ -31,3 +31,5 @@ Route::get('/team', 'TeamController@team');
 
 /* 论文/专利/项目的切换 */
 Route::get('/achivement', 'AchievementController@achivement');
+
+

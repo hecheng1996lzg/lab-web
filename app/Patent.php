@@ -28,8 +28,8 @@ class Patent extends Model
         }
         return $html;
     }
-    public function getHtml(){
-        $contents = $this->all();
+    public function getHtml($offset,$limit){
+        $contents = $this->offset($offset)->limit($limit)->get();
         return $this->getContentHtml($contents);
     }
 }
